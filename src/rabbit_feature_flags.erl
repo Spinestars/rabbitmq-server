@@ -502,7 +502,7 @@ is_node_compatible(Node, Timeout) ->
 
 local_enabled_feature_flags_are_supported_remotely(Node, Timeout) ->
     LocalEnabledFeatureNames = maps:keys(list(enabled)),
-    are_supported_remotely([{Node, true}], LocalEnabledFeatureNames, Timeout).
+    are_supported_remotely([Node], LocalEnabledFeatureNames, Timeout).
 
 remote_enabled_feature_flags_are_supported_locally(Node, Timeout) ->
     rabbit_log:info("Feature flags: querying enabled feature flags "
